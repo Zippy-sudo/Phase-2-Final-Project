@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar'
 
 function AddGamePage() {
 
-  const baseUrl = "http://localhost:4000";
+  const baseUrl = "https://phase-2-final-project-db.onrender.com";
 
   const [newTitle, setNewTitle] = useState("");
   const [newThumbnail, setNewThumbnail] = useState("");

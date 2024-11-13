@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid"
 
 function SavedGames() {
 
-  const baseUrl = "http://localhost:4000"
+  const baseUrl = "https://phase-2-final-project-db.onrender.com"
 
   const [savedGames, setSavedGames] = useState([])
 

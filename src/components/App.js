@@ -4,7 +4,7 @@ import GamesDisplay from './GamesDisplay';
 
 function App() {
 
-  const baseUrl = "http://localhost:4000"
+  const baseUrl = "https://phase-2-final-project-db.onrender.com"
 
   const [gameList, setGamesList] = useState([]);
   const [gamesToDisplay, setGamesToDisplay] = useState([]);
