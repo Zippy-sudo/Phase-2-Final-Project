@@ -8,6 +8,10 @@ const routes = [
         element: <HomePage />
     },
     {
+        path: "/addGame",
+        element: <AddGamePage />
+    },
+    {
         path: "/savedGames",
         element: <SavedGamesPage />
     }
