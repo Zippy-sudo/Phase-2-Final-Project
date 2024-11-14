@@ -2,9 +2,24 @@ import { useState, useEffect } from 'react';
 import Search from './Search';
 import GamesDisplay from './GamesDisplay';
 
-function App() {
+const baseUrl = "https://phase-2-final-project-db.onrender.com"
 
-  const baseUrl = "https://phase-2-final-project-db.onrender.com"
+function HandleSaveClick(object) {
+  fetch(`${baseUrl}/Saved_Games`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "Application/JSON",
+    },
+    body: JSON.stringify(object)
+  })
+    .then(resp => resp.json())
+    .then(ans => {
+      console.log("POST success", ans)
+    })
+    .catch(error => alert("Failed to POST"))
+}
+
+function App() {
 
   const [gameList, setGamesList] = useState([]);
   const [gamesToDisplay, setGamesToDisplay] = useState([]);
@@ -104,21 +119,6 @@ function App() {
     }
   }
 
-  function HandleSaveClick(object) {
-    fetch(`${baseUrl}/Saved_Games`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/JSON",
-      },
-      body: JSON.stringify(object)
-    })
-      .then(resp => resp.json())
-      .then(ans => {
-        console.log("POST success", ans)
-      })
-      .catch(error => alert("Failed to POST"))
-  }
-
   function HandleDeleteClick(id) {
     fetch(`${baseUrl}/Saved_Games/${id}`, {
       method: "DELETE",
@@ -137,10 +137,11 @@ function App() {
     <div className="App">
       <Search inputType={inputType} searchInput={searchInput} searchSelect={searchSelect} HandleInputChange={HandleInputChange} HandleNameFormSubmit={HandleNameFormSubmit} HandleSearchSelectChange={HandleSearchSelectChange} HandleSearchInputChange={HandleSearchInputChange} HandleSearchInputFormSubmit={HandleSearchInputFormSubmit} searchValue={searchValue} />
       <div>
-        <GamesDisplay gamesToDisplay={gamesToDisplayTrunc} HandleShowMoreClick={HandleShowMoreClick} HandleShowLessClick={HandleShowLessClick} HandleSaveCLick={HandleSaveClick} HandleDeleteCLick={HandleDeleteClick} />
+        <GamesDisplay gamesToDisplay={gamesToDisplayTrunc} HandleShowMoreClick={HandleShowMoreClick} HandleShowLessClick={HandleShowLessClick} HandleSaveClick={HandleSaveClick} HandleDeleteCLick={HandleDeleteClick} />
       </div>
     </div>
   );
 }
 
 export default App;
+export { HandleSaveClick }

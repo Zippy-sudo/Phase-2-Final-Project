@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import NavBar from '../components/NavBar'
+import { HandleSaveClick } from '../components/App';
+import { v4 as uuidv4} from "uuid"
 
 function AddGamePage() {
 
@@ -13,6 +16,27 @@ function AddGamePage() {
   const [newDeveloper, setNewDeveloper] = useState("");
   const [newPlatform, setNewPlatform] = useState("");
   const [newReleaseYear, setNewReleaseYear] = useState("");
+  const [moreInfo, setMoreInfo] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
+
+  const currentObj = {
+    title: newTitle,
+    thumbnail: newThumbnail,
+    short_description: newDescription,
+    genre: newGenre,
+    platform: newPlatform,
+    publisher: newPublisher,
+    developer: newDeveloper,
+    release_date: newReleaseYear,
+  }
+
+  function HandleMoreInfoClick() {
+    setMoreInfo(!moreInfo);
+  }
+
+  function HandleShowPreview() {
+    setShowPreview(!showPreview);
+  }
 
   function HandleAddTitleInput(event) {
     setNewTitle(event.target.value);
@@ -84,12 +108,16 @@ function AddGamePage() {
     setNewPublisher("");
     setNewDeveloper("");
     setNewReleaseYear("");
-    
+
   }
 
   return (
     <div className='addGamePage'>
       <NavBar />
+      <div className='showPreviewDiv'>
+        <label>Show Preview</label>
+        <input type='checkbox' className='showPreview' onChange={() => HandleShowPreview()}></input>
+      </div>
       <div className='addGameForm'>
         <form onSubmit={(event) => HandleAddGameFormSubmit(event)}>
           <p>Game Title:</p>
@@ -113,6 +141,32 @@ function AddGamePage() {
           </div>
         </form>
       </div>
+      {showPreview ?
+        <div className='previewDiv'>
+          <h2>Preview</h2>
+          <div className='gamecard'>
+            <h1 className='gamecardtitle'>{newTitle}</h1>
+            <img className='gamecardimg' src={newThumbnail} title={newTitle} alt={newTitle} />
+            <div className='infodiv'>
+              <p className='gamecardgenre'>{newGenre}</p>
+              <p className='gamecarddescription'>{newDescription}</p>
+              {moreInfo ?
+                <div>
+                  <p> Publisher :</p>
+                  <p className='gamecardgenre'>{newPublisher}</p>
+                  <p>Platform:</p>
+                  <p className='gamecardgenre'>{newPlatform}</p>
+                  <div className='buttonDiv'>
+                  <NavLink className="navlinkButton" to="/savedGames"  id={uuidv4()} onClick={(event) => HandleSaveClick(currentObj)}>Save</NavLink>
+                    <button onClick={HandleMoreInfoClick}>Back</button>
+                  </div>
+                </div> :
+                <button onClick={HandleMoreInfoClick}>More Info</button>
+              }
+            </div>
+          </div>
+        </div>
+        : null}
     </div>
   )
 }

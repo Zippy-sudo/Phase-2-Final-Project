@@ -124,7 +124,7 @@ div.addGameForm{
   align-items: center;
   background-color: rgb(146, 175, 215);
   padding: 1.5vh 2vh;
-  margin: 5vh 30vw;
+  margin: 1vh 30vw;
   border-radius: 30px;
   border: 2px solid black;
 }
@@ -141,3 +141,12 @@ a.navlinkButton{
   border: 1px solid rgb(122, 113, 113);
   padding: 1vh 1.65vw;
 }
+
+div.previewDiv{
+  text-align: center;
+}
+
+ div.showPreviewDiv{
+  text-align: center;
+  margin: 3vh 0vw 0vw 0vh;
+ }
