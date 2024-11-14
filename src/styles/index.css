@@ -28,6 +28,17 @@ a.nav-link {
   border-radius: 10px;
   text-decoration: none;
   color: black;
+  border: 2px solid gold;
+}
+
+a.nav-link.active{
+  padding: 2vw;
+  margin: 2vw;
+  background-color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  border: 2px solid red;
 }
 
 div.home {
@@ -68,7 +79,7 @@ div.gamesdisplay {
 div.gamecard {
   text-align: center;
   padding: 2vh 5vw;
-  margin: 4vh 5vw;
+  margin: 4vh 25vw;
   background-color: rgb(146, 175, 215);
   box-shadow: 0 1vw 1vh 0 rgba(0, 0, 0.2);
 }
@@ -100,6 +111,8 @@ div.buttonDiv {
 }
 
 div.addGamePage{
+  display:flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -109,7 +122,9 @@ div.addGameForm{
   align-items: center;
   background-color: rgb(146, 175, 215);
   padding: 1.5vh 2vh;
-  margin: 2vh;
+  margin: 1vh 30vw;
+  border-radius: 30px;
+  border: 2px solid black;
 }
 
 div.submitButton{
