@@ -53,27 +53,25 @@ Should you want to run the project locallly, you'll need:
  ```
 
  or by downloading a ZIP file of the code.
+
 2. Navigate to the project directory:
 
  ```bash
  cd Phase-2-Final-Project
  ```
 
- .
 3. Install the required dependencies:
 
  ```bash
  npm install
  ```
 
- .
 4. Run the development server:
 
  ```bash
  npm run start-server
  ```
 
- .
 5. Open your browser and visit `http://localhost:3000`
 
 ## Technologies Used
