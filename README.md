@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# GAME SEARCH
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple application that enables users to search through a list of free games, it is built using React JS.
 
-## Available Scripts
+By Nehemiah Madahana
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This simple appllication built using React JS enables users to quickly sort through over 400 games to find and save one that they like, or add one of their own.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- A HomePage that displays a list of random games.
+- A search Functionality.
+- An Add Game page to expand the database.
+- A Saved Games Page for favourite Games.
 
-### `npm test`
+## How to Use
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requirements
 
-### `npm run build`
+- A computer,tablet, or phone.
+- Access to the Internet.
+- A modern web browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### View Live Site
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Visit the deployed application at: [Game Search](https://game-finder-sdf-ft11.netlify.app).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The live site allows you to:
 
-### `npm run eject`
+- Browse game right off the bat.
+- Click on the **More Info** button under a specific game on the Home Page in order to see more details about the game.
+- Click on a **Save** button visible after clicking on the More Info button in order to save a game to the Saved Games page.
+- Add a game by filling out the form fields on the Add Games Page.
+- View Saved Games by navigating to the Saved Games page via the NavBar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Local Development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Should you want to run the project locallly, you'll need:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Node.js installed on your computer
+- Basic understanding of ReactJS
+- Code editor
+- Terminal/Command Line
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Installation Process
 
-## Learn More
+1. Clone this repository using:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ ```bash
+ git clone git@github.com:Zippy-sudo/Phase-2-Final-Project.git
+ ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ or by downloading a ZIP file of the code.
+2. Navigate to the project directory:
 
-### Code Splitting
+ ```bash
+ cd Phase-2-Final-Project
+ ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ .
+3. Install the required dependencies:
 
-### Analyzing the Bundle Size
+ ```bash
+ npm install
+ ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ .
+4. Run the development server:
 
-### Making a Progressive Web App
+ ```bash
+ npm run start-server
+ ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ .
+5. Open your browser and visit `http://localhost:3000`
 
-### Advanced Configuration
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- ReactJS
+- Create-React-App
+- CSS
+- JavaScript (ES6)
 
-### Deployment
+## Related Repositories
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Backend API
 
-### `npm run build` fails to minify
+- Repository: [Phase 2 Final Project API Repository](https://github.com/Zippy-sudo/Phase-2-Final-Project-db.git).
+- Deployed API: [Live API URL](https://phase-2-final-project-db.onrender.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Support and Contact Details
+
+If you have any questions, suggestions, or need assistance, please contact:
+
+- Email: <nehemiah.madahana@student.moringaschool.com>
+
+## License
+
+MIT License
+
+Copyright &copy; 2024 Nehemiah Madahana
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
