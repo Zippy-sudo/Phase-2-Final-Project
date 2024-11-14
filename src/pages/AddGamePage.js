@@ -109,7 +109,7 @@ function AddGamePage() {
           <p>Release Year:</p>
           <input required type='number' placeholder='Release Year' value={newReleaseYear} onChange={(event) => HandleAddReleaseYearInput(event)}></input>
           <div className='submitButton'>
-            <button required type='submit'>Submit</button>
+            <button type='submit'>Submit</button>
           </div>
         </form>
       </div>

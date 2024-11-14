@@ -58,7 +58,7 @@ function App() {
 
     const isGenre = () => {
       const toDisplay = gameList.filter(gameObj => {
-        return gameObj.genre === searchInput
+        return gameObj.genre.toUpperCase().includes(searchInput.toUpperCase());
       })
       setGamesToDisplay(toDisplay);
       setSearchSelect("all")
@@ -67,7 +67,7 @@ function App() {
 
     const isDeveloper = () => {
       const toDisplay = gameList.filter(gameObj => {
-        return gameObj.developer === searchInput
+        return gameObj.developer.toUpperCase().includes(searchInput.toUpperCase());
       })
       setGamesToDisplay(toDisplay);
       setSearchSelect("all")
@@ -76,7 +76,7 @@ function App() {
 
     const isReleaseYear = () => {
       const toDisplay = gameList.filter((gameObj) => {
-        return gameObj.release_date.slice(0, 4) === searchInput
+        return gameObj.release_date.slice(0, 4).includes(searchInput)
       })
       setGamesToDisplay(toDisplay);
       setSearchSelect("all")
@@ -93,7 +93,6 @@ function App() {
       }
     } else setGamesToDisplay(gameList)
   }
-
 
   function HandleShowMoreClick() {
     setEndDisplay(endDisplay + 5);

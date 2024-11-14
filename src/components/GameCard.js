@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import SavedGameCard from './SavedGameCard';
 
 function GameCard({ id, title, thumbnail, platform, game_url, developer, release_date, freetogame_profile_url, publisher, genre, short_description, HandleSaveCLick, HandleDeleteClick}) {
@@ -38,7 +38,7 @@ function GameCard({ id, title, thumbnail, platform, game_url, developer, release
                                 <p>Platform:</p>
                                 <p className='gamecardgenre'>{platform}</p>
                                 <div className='buttonDiv'>
-                                <button id={id} onClick={(event) => HandleSaveCLick(currentObj)}>Save</button>
+                                <NavLink className="navlinkButton" to="/savedGames"  id={id} onClick={(event) => HandleSaveCLick(currentObj)}>Save</NavLink>
                                 <button onClick={HandleMoreInfoClick}>Back</button>
                                 </div>
                             </> :

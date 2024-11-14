@@ -29,6 +29,7 @@ a.nav-link {
   text-decoration: none;
   color: black;
   border: 2px solid gold;
+  box-shadow: 0 1vw 1vh 0 rgba(0, 0, 0.2);
 }
 
 a.nav-link.active{
@@ -39,6 +40,7 @@ a.nav-link.active{
   text-decoration: none;
   color: white;
   border: 2px solid red;
+  box-shadow: 0 2vw 4vh 0 rgba(0, 0, 0.2);
 }
 
 div.home {
@@ -122,7 +124,7 @@ div.addGameForm{
   align-items: center;
   background-color: rgb(146, 175, 215);
   padding: 1.5vh 2vh;
-  margin: 1vh 30vw;
+  margin: 5vh 30vw;
   border-radius: 30px;
   border: 2px solid black;
 }
@@ -130,4 +132,12 @@ div.addGameForm{
 div.submitButton{
   text-align: center;
   margin: 1vh 1vw;
+}
+
+a.navlinkButton{
+  text-decoration: none;
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid rgb(122, 113, 113);
+  padding: 1vh 1.65vw;
 }
