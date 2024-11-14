@@ -28,6 +28,7 @@ function App() {
   const [searchSelect, setSearchSelect] = useState("all");
   const [searchInput, setSearchInput] = useState("");
   const [inputType, setInputType] = useState(false);
+  const [none, setNone] = useState(true);
 
   useEffect(() => {
     fetch(`${baseUrl}/games`)
@@ -59,7 +60,7 @@ function App() {
 
   function HandleSearchSelectChange(event) {
     setSearchSelect(event.target.value);
-    if(event.target.value === "release-date"){
+    if (event.target.value === "release-date") {
       setInputType(true)
     }
   }
@@ -133,12 +134,26 @@ function App() {
   console.log(gamesToDisplay, searchInput, searchSelect)
   const gamesToDisplayTrunc = gamesToDisplay.slice(0, endDisplay)
 
+  useEffect(() => {
+    if (gamesToDisplay.length === 0 ){
+      setNone(true) 
+    } else {
+      setNone(false)
+    }
+  }, [gamesToDisplay])
+
+
   return (
     <div className="App">
       <Search inputType={inputType} searchInput={searchInput} searchSelect={searchSelect} HandleInputChange={HandleInputChange} HandleNameFormSubmit={HandleNameFormSubmit} HandleSearchSelectChange={HandleSearchSelectChange} HandleSearchInputChange={HandleSearchInputChange} HandleSearchInputFormSubmit={HandleSearchInputFormSubmit} searchValue={searchValue} />
-      <div>
-        <GamesDisplay gamesToDisplay={gamesToDisplayTrunc} HandleShowMoreClick={HandleShowMoreClick} HandleShowLessClick={HandleShowLessClick} HandleSaveClick={HandleSaveClick} HandleDeleteCLick={HandleDeleteClick} />
-      </div>
+      <p>{gamesToDisplay.length} results found</p>
+      {none ?
+        <div className='none'>
+          <p>No results found re-check parameters or add a game you would like to see</p>
+        </div>
+        : <div>
+          <GamesDisplay gamesToDisplay={gamesToDisplayTrunc} HandleShowMoreClick={HandleShowMoreClick} HandleShowLessClick={HandleShowLessClick} HandleSaveClick={HandleSaveClick} HandleDeleteCLick={HandleDeleteClick} />
+        </div>}
     </div>
   );
 }

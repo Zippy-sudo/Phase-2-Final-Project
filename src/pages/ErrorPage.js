@@ -10,9 +10,9 @@ function ErrorPage() {
         <header>
             <NavBar />
         </header>
-        <main>
+        <div className="home">
             <h1>Mr. Stark I don't feel so good...</h1>
-        </main>
+        </div>
         </>
     )
 }

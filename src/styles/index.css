@@ -150,3 +150,10 @@ div.previewDiv{
   text-align: center;
   margin: 3vh 0vw 0vw 0vh;
  }
+
+ div.none {
+  background-color: aqua;
+  padding: 5vh 0vw;
+  margin: 0vh 15vw;
+  border-radius: 10px;
+ }
