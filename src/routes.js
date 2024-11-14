@@ -1,19 +1,23 @@
 import HomePage from "./pages/HomePage"
 import SavedGamesPage from "./pages/SavedGamesPage";
 import AddGamePage from "./pages/AddGamePage";
+import ErrorPage from "./pages/ErrorPage";
 
 const routes = [
     {
         path: "/",
-        element: <HomePage />
+        element: <HomePage />,
+        errorElement: <ErrorPage />
     },
     {
         path: "/addGame",
-        element: <AddGamePage />
+        element: <AddGamePage />,
+        errorElement: <ErrorPage />
     },
     {
         path: "/savedGames",
-        element: <SavedGamesPage />
+        element: <SavedGamesPage />,
+        errorElement: <ErrorPage />
     }
 ];
 
