@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import NavBar from '../components/NavBar'
 import { HandleSaveClick } from '../components/App';
@@ -18,6 +18,13 @@ function AddGamePage() {
   const [newReleaseYear, setNewReleaseYear] = useState("");
   const [moreInfo, setMoreInfo] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
+  const [allowSave, setAllowSave] = useState(false);
+
+  useEffect(() => {
+    if(newTitle !== "" && newDescription !== "" && newDeveloper !== "" && newGenre !== "" && newPublisher !== "" && newPlatform !== "" && newReleaseYear !== "" && newThumbnail !== "") {
+      setAllowSave(true)
+    }
+  },[newDescription,newDeveloper,newGenre,newPlatform,newPublisher,newReleaseYear,newThumbnail,newTitle])
 
   const currentObj = {
     title: newTitle,
@@ -157,7 +164,9 @@ function AddGamePage() {
                   <p>Platform:</p>
                   <p className='gamecardgenre'>{newPlatform}</p>
                   <div className='buttonDiv'>
-                  <NavLink className="navlinkButton" to="/savedGames"  id={uuidv4()} onClick={(event) => HandleSaveClick(currentObj)}>Save</NavLink>
+                    {allowSave ? 
+                    <NavLink className="navlinkButton" to="/savedGames"  id={uuidv4()} onClick={(event) => HandleSaveClick(currentObj)}>Save</NavLink>
+                    : null}
                     <button onClick={HandleMoreInfoClick}>Back</button>
                   </div>
                 </div> :
