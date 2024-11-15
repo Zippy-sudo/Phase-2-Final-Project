@@ -34,11 +34,12 @@ function App() {
     fetch(`${baseUrl}/games`)
       .then(resp => resp.json())
       .then(ans => {
+        console.log("Get success", ans)
         setGamesList(ans)
         setGamesToDisplay(ans)
       })
       .catch(error => {
-        alert("Get failed")
+        alert("Get Failed")
         console.log(error.message)
       })
   }, [])
@@ -131,12 +132,12 @@ function App() {
       .catch(error => alert("Failed to DELETE"))
   }
 
-  console.log(gamesToDisplay, searchInput, searchSelect)
+
   const gamesToDisplayTrunc = gamesToDisplay.slice(0, endDisplay)
 
   useEffect(() => {
-    if (gamesToDisplay.length === 0 ){
-      setNone(true) 
+    if (gamesToDisplay.length === 0) {
+      setNone(true)
     } else {
       setNone(false)
     }
